@@ -189,3 +189,5 @@ Alguns comandos imprtantes para executar após:
 fabio@DESKTOP-EOD4T44:~/curso_fullcycle_git_flow$ git config --global commit.pgpsign true
 fabio@DESKTOP-EOD4T44:~/curso_fullcycle_git_flow$ git config --global tag.pgpSign true
 ```
+
+Continua
