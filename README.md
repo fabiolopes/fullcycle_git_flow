@@ -190,4 +190,52 @@ fabio@DESKTOP-EOD4T44:~/curso_fullcycle_git_flow$ git config --global commit.pgp
 fabio@DESKTOP-EOD4T44:~/curso_fullcycle_git_flow$ git config --global tag.pgpSign true
 ```
 
-Continua
+## Adicionando email para a assinatura
+
+Com posse do id, digite:
+
+`gpg --edit-key ${id}`
+
+No terminal do gpg, digite:
+
+`adduid`
+
+Serão solicitados os campo *real name* e *Email address*. Informe-os. Após a confirmação, a assinatura terá esse novo usuário de email cadastrado.
+
+Será apresentada uma saída com os emails cadastrados:
+
+```
+[ultimate] (1)  fabiolopes <fabiolopesbione@hotmail.com>
+[ unknown] (2). Fabio Bione <fabioflb85@gmail.com>
+```
+
+Veja que o email adicionado está com o nível de confiança "unknown". Para editar, executaremos os passos a seguir:
+
+`uid 2`
+
+Selecionamos o uid que precisamos modificar.
+
+```
+[ultimate] (1)  fabiolopes <fabiolopesbione@hotmail.com>
+[ unknown] (2)* Fabio Bione <fabioflb85@gmail.com>
+```
+
+No termnal gpg, digitamos:
+
+`trust`
+
+Será solicitado qual nível de confiança temos com o email selecionado:
+
+```
+Please decide how far you trust this user to correctly verify other users' keys
+(by looking at passports, checking fingerprints from different sources, etc.)
+
+  1 = I don't know or won't say
+  2 = I do NOT trust
+  3 = I trust marginally
+  4 = I trust fully
+  5 = I trust ultimately
+  m = back to the main menu
+```
+
+No caso, escolhemos 5. e confirmamos.
